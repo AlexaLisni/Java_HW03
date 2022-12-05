@@ -12,7 +12,6 @@ public class app {
         int c = sc.nextInt();
         System.out.print("d:");
         int d = sc.nextInt();
-        sc.close();
         int[] array_abcd = new int[] { a, b, c, d };
 
         return array_abcd;
@@ -25,9 +24,10 @@ public class app {
         } else {
             return true;
         }
+
     }
 
-    static String howWay(int[] array) {
+    static String how_way(int[] array) {
         long[] resultArray = new long[array[1] + 1];
         resultArray[array[0]] = 1;
         int i = 0;
@@ -49,12 +49,13 @@ public class app {
     }
 
     public static void main(String[] args) {
-        boolean check_arr = check(input_text());
-        if (check_arr == false) {
-            System.out.println("Не коректные данные");
-        } else {
-            String showMe = howWay(input_text());
+        int[] arr_for_check = input_text();
+        boolean check_arr = check(arr_for_check);
+        if (check_arr == true) {
+            String showMe = how_way(arr_for_check);
             show_text(showMe);
+        } else {
+            System.out.println("Не коректные данные");
         }
     }
 
